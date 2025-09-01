@@ -1,0 +1,546 @@
+git
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66
+$ git init
+Initialized empty Git repository in F:/git-files/lec66/.git/
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        style.css
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git add .
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -m "the main file in my project"
+[master (root-commit) 6fd566e] the main file in my project
+ 2 files changed, 17 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   style.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git add style.css
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit --amend
+[master 0fd525e] the main file in my project and
+ Date: Sun Aug 31 23:34:22 2025 +0300
+ 2 files changed, 20 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -am "add first h1"
+[master 29fd1ef] add first h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -am "add second h1"
+[master f149400] add second h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -am "add third h1"
+[master 8f2cfb8] add third h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+8f2cfb8 (HEAD -> master) add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout 29fd1ef
+Note: switching to '29fd1ef'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 29fd1ef add first h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git log --oneline
+29fd1ef (HEAD) add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git switch master
+Previous HEAD position was 29fd1ef add first h1
+Switched to branch 'master'
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+8f2cfb8 (HEAD -> master) add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout f149400
+Note: switching to 'f149400'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f149400 add second h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((f149400...))
+$ git log --oneline
+f149400 (HEAD) add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((f149400...))
+$ git switch -
+Previous HEAD position was f149400 add second h1
+Switched to branch 'master'
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout head~1
+Note: switching to 'head~1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f149400 add second h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((f149400...))
+$ git switch -
+Previous HEAD position was f149400 add second h1
+Switched to branch 'master'
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout head~1
+Note: switching to 'head~1'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at f149400 add second h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((f149400...))
+$ git checkout head~1
+Previous HEAD position was f149400 add second h1
+HEAD is now at 29fd1ef add first h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git switch -
+fatal: a branch is expected, got commit 'f149400212c651d967670007cd881523f2c15fc4'
+hint: If you want to detach HEAD at the commit, try again with the --detach option.
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git switch master
+Previous HEAD position was 29fd1ef add first h1
+Switched to branch 'master'
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout head~2
+Note: switching to 'head~2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 29fd1ef add first h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git status
+HEAD detached at 29fd1ef
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git commit -am "add forurth h1 "
+[detached HEAD e52d036] add forurth h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((e52d036...))
+$ git status
+HEAD detached from 29fd1ef
+nothing to commit, working tree clean
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((e52d036...))
+$ git switch -
+Warning: you are leaving 1 commit behind, not connected to
+any of your branches:
+
+  e52d036 add forurth h1
+
+If you want to keep it by creating a new branch, this may be a good time
+to do so with:
+
+ git branch <new-branch-name> e52d036
+
+Switched to branch 'master'
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout head~2
+Note: switching to 'head~2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 29fd1ef add first h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$ git commit -am "add Rashed h1 "
+[detached HEAD 5fe3573] add Rashed h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((5fe3573...))
+$ git log --oneline
+5fe3573 (HEAD) add Rashed h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((5fe3573...))
+$ git branch rashed 5fe3573
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((5fe3573...))
+$ git switch -
+Previous HEAD position was 5fe3573 add Rashed h1
+Switched to branch 'master'
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git branch
+* master
+  rashed
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git branch -d rashed
+error: the branch 'rashed' is not fully merged
+hint: If you are sure you want to delete it, run 'git branch -D rashed'
+hint: Disable this message with "git config set advice.forceDeleteBranch false"
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git branch -D rashed
+Deleted branch rashed (was 5fe3573).
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git branch
+* master
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git restor
+git: 'restor' is not a git command. See 'git --help'.
+
+The most similar commands are
+        restore
+        remote
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git restore index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git add index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git restore index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git restore index.html  --staged
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git restore index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git add index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -am "add fourth h1 "
+[master d43a638] add fourth h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+d43a638 (HEAD -> master) add fourth h1
+8f2cfb8 add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git resset 8f2cfb8
+git: 'resset' is not a git command. See 'git --help'.
+
+The most similar command is
+        reset
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git reset 8f2cfb8
+Unstaged changes after reset:
+M       index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -am "add fourth h1 "
+[master 32dba50] add fourth h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+32dba50 (HEAD -> master) add fourth h1
+8f2cfb8 add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git reset 8f2cfb8 --hard
+HEAD is now at 8f2cfb8 add third h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+8f2cfb8 (HEAD -> master) add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git commit -am "add fourth h1 "
+[master e7013f5] add fourth h1
+ 1 file changed, 1 insertion(+)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+e7013f5 (HEAD -> master) add fourth h1
+8f2cfb8 add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git revert e7013f5
+[master 6402958] Revert "add fourth h1 after revert"
+ 1 file changed, 1 deletion(-)
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git log --oneline
+6402958 (HEAD -> master) Revert "add fourth h1 after revert"
+e7013f5 add fourth h1
+8f2cfb8 add third h1
+f149400 add second h1
+29fd1ef add first h1
+0fd525e the main file in my project and
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git reset head~1 --hard
+HEAD is now at e7013f5 add fourth h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git reset head~2
+Unstaged changes after reset:
+M       index.html
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git revert head~2
+CONFLICT (modify/delete): index.html deleted in (empty tree) and modified in HEAD.  Ver
+sion HEAD of index.html left in tree.
+error: could not revert 0fd525e... the main file in my project and
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+hint: Disable this message with "git config set advice.mergeConflict false"
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master|REVERTING)
+$ git commit -am "fix conflect "
+[master 97f34d4] fix conflect
+ 2 files changed, 2 insertions(+), 7 deletions(-)
+ delete mode 100644 style.css
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 (master)
+$ git checkout head~2
+Note: switching to 'head~2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 29fd1ef add first h1
+
+amjd@DESKTOP-UR50JF0 MINGW64 /f/git-files/lec66 ((29fd1ef...))
+$
